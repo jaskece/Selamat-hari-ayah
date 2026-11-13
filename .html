@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Father's Day ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+ min-height:100vh;
+ background:linear-gradient(145deg,#090d19,#172b3d,#080d18);
+ color:white;
+ font-family:Georgia,serif;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+ overflow-x:hidden;
+}
+
+.stars{
+ position:fixed;
+ inset:0;
+ background-image:radial-gradient(#fff 1px,transparent 1px);
+ background-size:45px 45px;
+ opacity:.35;
+ animation:star 30s linear infinite;
+}
+
+@keyframes star{
+ to{background-position:300px 300px}
+}
+
+.container{
+ position:relative;
+ z-index:2;
+ width:100%;
+ max-width:430px;
+ text-align:center;
+}
+
+.heart{
+ font-size:65px;
+ animation:beat 1.3s infinite;
+}
+
+@keyframes beat{
+ 50%{transform:scale(1.2)}
+}
+
+h1{
+ color:#f5d49b;
+ font-size:35px;
+ margin:15px 0;
+ text-shadow:0 0 20px #c99c5e;
+}
+
+.subtitle{
+ color:#ddd;
+ font-size:14px;
+ line-height:1.8;
+}
+
+.card{
+ margin-top:30px;
+ padding:28px 22px;
+ border:1px solid #ffffff30;
+ border-radius:22px;
+ background:#ffffff0d;
+ backdrop-filter:blur(15px);
+ box-shadow:0 10px 40px #0008;
+}
+
+h2{
+ color:#f5d49b;
+ margin-bottom:20px;
+}
+
+.message{
+ color:#eee;
+ font-size:15px;
+ line-height:1.9;
+}
+
+button{
+ margin-top:25px;
+ padding:14px 25px;
+ border:0;
+ border-radius:30px;
+ background:linear-gradient(90deg,#b88b50,#f5d49b);
+ color:#151515;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+button:active{
+ transform:scale(.95);
+}
+
+.letter{
+ display:none;
+ margin-top:25px;
+ padding:20px;
+ border-radius:15px;
+ background:#ffffff12;
+ animation:show 1s ease;
+}
+
+@keyframes show{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+.letter p{
+ font-size:14px;
+ line-height:2;
+ color:#eee;
+}
+
+.footer{
+ margin-top:25px;
+ font-size:12px;
+ color:#aaa;
+}
+
+.floating{
+ position:fixed;
+ bottom:-40px;
+ z-index:1;
+ animation:floatUp linear forwards;
+ pointer-events:none;
+}
+
+@keyframes floatUp{
+ 0%{transform:translateY(0) rotate(0);opacity:0}
+ 20%{opacity:.8}
+ 100%{transform:translateY(-110vh) rotate(180deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+ <div class="heart">❤️</div>
+
+ <h1>HAPPY FATHER'S DAY</h1>
+
+ <p class="subtitle">
+  Selamat Hari Ayah untuk pahlawan terbaik dalam hidupku.
+  <br>
+  Terima kasih atas semua perjuanganmu.
+ </p>
+
+ <div class="card">
+
+  <h2>Dear Dad 🤍</h2>
+
+  <p class="message">
+   Tidak semua pahlawan memakai jubah.
+   Ada seorang Ayah yang setiap hari berjuang
+   demi kebahagiaan keluarganya.
+   <br><br>
+   Ayah mungkin tidak selalu mengatakan
+   bahwa dirinya lelah, tetapi aku tahu
+   betapa besar perjuanganmu.
+   <br><br>
+   Terima kasih telah menjadi tempatku belajar,
+   tumbuh, dan mengenal arti kehidupan.
+  </p>
+
+  <button onclick="openLetter()">
+   BUKA SURAT UNTUK AYAH 💌
+  </button>
+
+  <div class="letter" id="letter">
+   <p>
+    Untuk Ayah tercinta...
+    <br><br>
+    Maaf jika aku belum bisa menjadi anak
+    yang selalu membanggakan.
+    <br><br>
+    Terima kasih untuk setiap pengorbanan,
+    nasihat, kasih sayang, dan doa yang
+    selalu Ayah berikan.
+    <br><br>
+    Aku tidak tahu bagaimana cara membalas
+    semua kebaikan Ayah.
+    Namun, aku berjanji akan terus berusaha
+    menjadi anak yang lebih baik.
+    <br><br>
+    Semoga Ayah selalu sehat, panjang umur,
+    bahagia, dan selalu dalam lindungan Tuhan.
+    <br><br>
+    **Aku sayang Ayah.**
+    <br><br>
+    ❤️ SELAMAT HARI AYAH ❤️
+   </p>
+  </div>
+
+ </div>
+
+ <div class="footer">
+  Made with love ❤️
+  <br><br>
+  © 2026 | Special For Father
+ </div>
+
+</div>
+
+<script>
+function openLetter(){
+ const letter=document.getElementById("letter");
+ letter.style.display=
+ letter.style.display==="block"?"none":"block";
+}
+
+function createHeart(){
+ const item=document.createElement("div");
+ item.className="floating";
+ item.innerHTML=Math.random()>.5?"❤️":"✨";
+ item.style.left=Math.random()*100+"vw";
+ item.style.fontSize=(15+Math.random()*20)+"px";
+ item.style.animationDuration=(5+Math.random()*5)+"s";
+
+ document.body.appendChild(item);
+
+ setTimeout(()=>item.remove(),10000);
+}
+
+setInterval(createHeart,500);
+</script>
+
+</body>
+</html>
